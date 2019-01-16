@@ -1,0 +1,11 @@
+actor: ApiTester
+modules:
+    enabled:
+      - REST:
+          url: http://php
+          depends: PhpBrowser
+      - \Helper\Api
+      - Yii2:
+        part: [init, orm]
+        entryScript: index-test.php
+        cleanup: false

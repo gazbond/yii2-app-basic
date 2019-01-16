@@ -1,0 +1,14 @@
+class_name: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: http://php
+            host: chrome
+            # disabled in ChromeDriver:
+            window_size: false
+            browser: chrome
+        - Yii2:
+            part: [init, orm]
+            entryScript: index-test.php
+            cleanup: false
+

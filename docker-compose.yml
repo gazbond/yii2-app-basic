@@ -1,0 +1,30 @@
+version: '2'
+services:
+  chrome:
+    image: selenium/standalone-chrome:3.141.59-dubnium
+    ports:
+          - "4444:4444"
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./docker/mysql/data/:/var/lib/mysql/
+      - ./docker/mysql/entrypoint/:/docker-entrypoint-initdb.d/
+    ports:
+      - '6306:3306'
+  php:
+    image: yiisoftware/yii-php:7.2-apache
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app:delegated
+      - ./docker/apache2/sites-enabled/:/etc/apache2/sites-enabled/
+    ports:
+      - '8080:80'
+
+# Migrations (cd tests/bin/yii and ./yii for test db):
+# yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
+# yii migrate --migrationPath=@yii/rbac/migrations
+# yii migrate --migrationPath=@vendor/yii2mod/yii2-settings/migrations
+# Fixtures:
+# yii fixture User
