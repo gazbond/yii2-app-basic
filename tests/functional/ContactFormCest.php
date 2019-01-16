@@ -1,9 +1,13 @@
 <?php
 
+use Codeception\Stub;
+
 class ContactFormCest 
 {
     public function _before(\FunctionalTester $I)
     {
+        // Stub out assetManager because assets are being published in the wrong directory
+        Yii::$app->set('assetManager', Stub::make('yii\web\AssetManager', ['bundles' => false]));
         $I->amOnPage(['site/contact']);
     }
 
