@@ -31,6 +31,9 @@ DIRECTORY STRUCTURE
       widgets/            conatins widgets
 
 
+INSTALLATION
+------------
+
 ### Install with Docker
 
 Update your vendor packages
