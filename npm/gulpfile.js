@@ -58,7 +58,6 @@ gulp.task('move-bootstrap-fonts', (cp) => {
 gulp.task('build-dev-sass', (cp) => {
     gulp.src('./src/index.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(cssClean({compatibility: 'ie8'}))
         .pipe(cssPrefixer())
         .pipe(gulp.dest(distDir));
     cp();
@@ -68,6 +67,7 @@ gulp.task('build-prod-sass', (cp) => {
     gulp.src('./src/index.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cssPrefixer())
+        .pipe(cssClean({compatibility: 'ie8'}))
         .pipe(gulp.dest(distDir));
     cp();
 });
