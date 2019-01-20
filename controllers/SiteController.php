@@ -74,7 +74,6 @@ class SiteController extends Controller
 
     public function actionReact()
     {
-        \app\components\Utils::log('testing');
         return $this->render('react', [
             'identity' => Yii::$app->user->identity,
         ]);
