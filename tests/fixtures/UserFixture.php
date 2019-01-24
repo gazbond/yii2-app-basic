@@ -21,7 +21,6 @@ class UserFixture extends Fixture
         $user = Yii::createObject([
             'class'    => User::class,
             'scenario' => 'create',
-            'id' => 1,
             'email'    => 'gaz@gazbond.co.uk',
             'username' => 'Gazbond',
             'password' => 'password',
@@ -31,7 +30,6 @@ class UserFixture extends Fixture
         $user = Yii::createObject([
             'class'    => User::class,
             'scenario' => 'create',
-            'id' => 2,
             'email'    => 'dev@gazbond.co.uk',
             'username' => 'root',
             'password' => 'password',
