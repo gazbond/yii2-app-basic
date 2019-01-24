@@ -52,18 +52,6 @@ class UsersController extends BaseController
     }
 
     /**
-     * @return array
-     */
-    public function actionIndex()
-    {
-        $user = new UserElastic();
-        $user->scenario = 'search';
-        $params = Yii::$app->request->queryParams;
-        $user->setAttributes($params);
-        return $user->search();
-    }
-
-    /**
      * @return array|null|\app\models\UserElastic
      */
     public function actionMe()

@@ -2,7 +2,7 @@
 
 use yii\rest\ActiveController;
 use sizeg\jwt\JwtHttpBearerAuth;
-use yii\web\NotFoundHttpException;
+use yii\web\HttpException;
 use Yii;
 use app\components\BaseElasticRecord;
 
@@ -47,9 +47,8 @@ class BaseController extends ActiveController
     public function actionIndex()
     {
         /** @var BaseElasticRecord $model */
-        $model = Yii::createObject($this->elasticClass, [
-            'scenario' => 'search'
-        ]);
+        $model = Yii::createObject($this->elasticClass);
+        $model->scenario = 'search';
         $params = Yii::$app->request->queryParams;
         $model->setAttributes($params);
         return $model->search();
@@ -57,8 +56,8 @@ class BaseController extends ActiveController
 
     /**
      * @param $id
-     * @return array|mixed|null|\yii\elasticsearch\ActiveRecord|static
-     * @throws NotFoundHttpException
+     * @return array|mixed|null|\yii\elasticsearch\ActiveRecord
+     * @throws HttpException
      */
     public function actionView($id)
     {
@@ -66,7 +65,7 @@ class BaseController extends ActiveController
         $modelClass = $this->elasticClass;
         $result = $modelClass::findOne($id);
         if($result === null) {
-            throw new NotFoundHttpException();
+            throw new HttpException(404);
         }
         return $result;
     }
