@@ -73,10 +73,6 @@ if(!Yii::$app->user->isGuest) {
                         'url' => ['/user/admin'],
                         'visible' => Yii::$app->user->can('admin')
                     ],
-                    ['label' => Yii::t('app', 'Settings'),
-                        'url' => ['/settings'],
-                        'visible' => Yii::$app->user->can('admin')
-                    ],
                     ['label' => '<li role="separator" class="divider"></li>',
                         'encode' => false,
                     ],

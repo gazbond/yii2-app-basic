@@ -14,19 +14,4 @@ return [
     'rbac' => [
         'class' => 'dektrium\rbac\RbacWebModule'
     ],
-    'settings' =>  [
-        'class'=>'yii2mod\settings\Module',
-        'as access' => [
-            'class' => 'yii\filters\AccessControl',
-            'ruleConfig' => [
-                'class' => 'dektrium\user\filters\AccessRule',
-            ],
-            'rules' => [
-                [
-                    'allow' => true,
-                    'roles' => ['admin']
-                ],
-            ]
-        ]
-    ],
 ];
