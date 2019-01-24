@@ -66,6 +66,7 @@ $config = [
             'class' => 'dektrium\rbac\components\DbManager',
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'elasticsearch' => require(__DIR__ . '/elastic.php'),
         'mailer' => require(__DIR__ . '/mail.php'),
         'jwt' => require(__DIR__ . '/jwt.php'),
     ],
