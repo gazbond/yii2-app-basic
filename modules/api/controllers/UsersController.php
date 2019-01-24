@@ -1,12 +1,13 @@
 <?php namespace app\modules\api\controllers;
 
-use app\models\User;
-use Yii;
 use app\modules\api\components\BaseController;
+use app\models\UserElastic;
+use Yii;
 
 class UsersController extends BaseController
 {
     public $modelClass = 'app\models\User';
+    public $elasticClass = 'app\models\UserElastic';
 
     /**
      * @inheritdoc
@@ -51,10 +52,22 @@ class UsersController extends BaseController
     }
 
     /**
-     * @return array|null|\app\models\User
+     * @return array
+     */
+    public function actionIndex()
+    {
+        $user = new UserElastic();
+        $user->scenario = 'search';
+        $params = Yii::$app->request->queryParams;
+        $user->setAttributes($params);
+        return $user->search();
+    }
+
+    /**
+     * @return array|null|\app\models\UserElastic
      */
     public function actionMe()
     {
-        return User::find()->where(['id' => Yii::$app->user->id])->one();
+        return UserElastic::findOne(Yii::$app->user->id);
     }
 }
