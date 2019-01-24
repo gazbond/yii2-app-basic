@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d02fdb97eb1a25fc5dd50f39fb1dcab1",
+    "content-hash": "e858a9845d6866ab238de199e3ad73f8",
     "packages": [
         {
             "name": "borales/yii2-elasticsearch-behavior",
@@ -1062,16 +1062,16 @@
         },
         {
             "name": "yiisoft/yii2-elasticsearch",
-            "version": "dev-master",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-elasticsearch.git",
-                "reference": "aa22ffd1013f381dcaa4481399d6a0fa76dfeabe"
+                "reference": "82d66d17543040dda3c64f299ae251658156c2c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-elasticsearch/zipball/aa22ffd1013f381dcaa4481399d6a0fa76dfeabe",
-                "reference": "aa22ffd1013f381dcaa4481399d6a0fa76dfeabe",
+                "url": "https://api.github.com/repos/yiisoft/yii2-elasticsearch/zipball/82d66d17543040dda3c64f299ae251658156c2c1",
+                "reference": "82d66d17543040dda3c64f299ae251658156c2c1",
                 "shasum": ""
             },
             "require": {
@@ -1107,7 +1107,7 @@
                 "search",
                 "yii2"
             ],
-            "time": "2019-01-17T14:32:43+00:00"
+            "time": "2018-03-20T11:34:58+00:00"
         },
         {
             "name": "yiisoft/yii2-httpclient",
@@ -4145,9 +4145,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "yiisoft/yii2-elasticsearch": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
