@@ -24,7 +24,9 @@
         "yii2mod/yii2-settings": "^2.5",
 
         "lcobucci/jwt": "^3.2",
-        "sizeg/yii2-jwt": "^1.2"
+        "sizeg/yii2-jwt": "^1.2",
+        "borales/yii2-elasticsearch-behavior": "^0.0.1",
+        "yiisoft/yii2-elasticsearch": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

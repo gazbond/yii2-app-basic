@@ -1,5 +1,21 @@
 version: '2'
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
+    environment:
+        - cluster.name=docker-cluster
+        - discovery.type=single-node
+    ports:
+        - "9200:9200"
+        - "9300:9300"
+    volumes:
+        - ./docker/elasticsearch/data:/usr/share/elasticsearch/data
+#  kibana:
+#      image: docker.elastic.co/kibana/kibana:6.3.0
+#      ports:
+#          - "5601:5601"
+#      depends_on:
+#          - elasticsearch
   chrome:
     image: selenium/standalone-chrome:3.141.59-dubnium
     ports:
@@ -22,7 +38,7 @@ services:
     ports:
       - '8080:80'
 
-# Migrations (cd tests/bin/yii and ./yii for test db):
+# Migrations (cd tests/bin and ./yii for test db):
 # yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
 # yii migrate --migrationPath=@yii/rbac/migrations
 # yii migrate --migrationPath=@vendor/yii2mod/yii2-settings/migrations
