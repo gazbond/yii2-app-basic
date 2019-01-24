@@ -8,7 +8,7 @@ return [
 //        'password' => ''
 //    ],
     'nodes' => [
-        ['http_address' => 'elastic:9200'],
+        ['http_address' => 'elastictest:9200'],
         // configure more hosts if you have a cluster
     ],
 ];

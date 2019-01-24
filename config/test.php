@@ -7,6 +7,7 @@ $config = yii\helpers\ArrayHelper::merge(
     [
         'components' => [
             'db' => require(__DIR__ . '/test-db.php'),
+            'elasticsearch' => require(__DIR__ . '/elastic-test.php'),
             'mailer' => [
                 'useFileTransport' => true
             ],
@@ -27,8 +28,8 @@ $config['components']['log']['targets'] = [
         'levels' => ['error', 'warning', 'info'],
         'logVars' => [],
         'categories' => [
+//            'yii\db\*',
 //            'yii\web\HttpException:*',
-//            'application',
             'app'
         ],
     ],
