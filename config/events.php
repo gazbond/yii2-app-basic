@@ -4,11 +4,10 @@ use dektrium\user\controllers\SecurityController;
 use yii\base\Event;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use yii\helpers\Url;
-use app\components\Utils;
 
 Event::on(SecurityController::class, SecurityController::EVENT_AFTER_LOGIN, function (Event $e) {
 
-    $expires = new DateTimeImmutable();
+    $expires = new DateTime();
     $expires->modify(Yii::$app->params['token-expiry']);
 
     /** @var app\models\User $user */
