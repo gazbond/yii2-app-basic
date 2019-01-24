@@ -1,10 +1,10 @@
 <?php namespace app\modules\api\controllers;
 
-use app\modules\api\components\BaseController;
+use app\components\BaseApiController;
 use app\models\UserElastic;
 use Yii;
 
-class UsersController extends BaseController
+class UsersController extends BaseApiController
 {
     public $modelClass = 'app\models\User';
     public $elasticClass = 'app\models\UserElastic';
