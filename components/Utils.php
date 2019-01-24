@@ -1,11 +1,4 @@
-<?php
-/**
- * User: gazbond
- * Date: 15/04/2015
- * Time: 16:48
- */
-
-namespace app\components;
+<?php namespace app\components;
 
 use yii\db\ActiveRecord;
 use yii\helpers\VarDumper;

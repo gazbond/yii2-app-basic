@@ -1,6 +1,4 @@
-<?php
-
-namespace app\components;
+<?php namespace app\components;
 
 use yii\log\Target;
 
