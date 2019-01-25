@@ -28,11 +28,11 @@ Event::on(SecurityController::class, SecurityController::EVENT_AFTER_LOGIN, func
     Yii::$app->response->headers->add('Authorization', $token);
 
     // Set unencrypted cookie
-    setcookie('Authorization', $token);
+    setcookie('Authorization', $token, $expires->getTimestamp(), '/');
 });
 
 Event::on(SecurityController::class, SecurityController::EVENT_AFTER_LOGOUT, function (Event $e) {
 
     // Remove cookie
-    setcookie('Authorization','',time()-1);
+    setcookie('Authorization','',time()-1, '/');
 });
