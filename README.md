@@ -119,7 +119,7 @@ Yii Commands
 
 ```
 # Open shell for php container (replace <container-id> with php conatiner id)
-docker exec -it <container-id> hash
+docker exec -it <container-id> bash
 
 ```
 ### See docker.sh for Yii commands 
