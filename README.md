@@ -112,33 +112,17 @@ return [
 ];
 ```
 
-Database Migrations
--------------------
+Yii Commands
+------------
 
-### Web
-
-```
-
-yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
-
-yii migrate --migrationPath=@yii/rbac/migrations
-
-yii migrate --migrationPath=@vendor/yii2mod/yii2-settings/migrations
-
-yii fixture User
-```
-
-### Test
+(database migrations, type definitions and fixture data)
 
 ```
-./tests/bin/yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
+# Open shell for php container (replace <container-id> with php conatiner id)
+docker exec -it <container-id> hash
 
-./tests/bin/yii migrate --migrationPath=@yii/rbac/migrations
-
-./tests/bin/yii migrate --migrationPath=@vendor/yii2mod/yii2-settings/migrations
-
-./tests/bin/yii fixture User
 ```
+### See docker.sh for Yii commands 
 
 Javascript and Stylesheets
 --------------------------
@@ -147,9 +131,7 @@ Javascript and Stylesheets
 
 ```
 cd npm/
-```
 
-```
 npm install
 
 ```
