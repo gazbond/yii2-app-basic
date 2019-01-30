@@ -7,8 +7,7 @@ const initState = {
     data: {
         users: [],
         me: {}
-    },
-    httpError: null
+    }
 };
 export const store = createStore(
     combineReducers(reducers), 
