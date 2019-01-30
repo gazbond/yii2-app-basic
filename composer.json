@@ -34,7 +34,8 @@
 
         "codeception/codeception": "^2.4",
         "codeception/verify": "~0.3.3",
-        "codeception/specify": "~0.4.6"
+        "codeception/specify": "~0.4.6",
+        "mis/yii2-ide-helper": "^1.0"
     },
     "config": {
         "process-timeout": 1800,

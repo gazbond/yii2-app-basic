@@ -6,7 +6,7 @@
 $config = [
     'id' => 'gazbond/yii2-app-basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'ideHelper'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -64,6 +64,13 @@ $config = [
         ],
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
+        ],
+        'ideHelper' => [
+            'class' => 'Mis\IdeHelper\IdeHelper',
+            'configFiles' => [
+                'config/web.php',
+                'config/console.php',
+            ]
         ],
         'db' => require(__DIR__ . '/db.php'),
         'elasticsearch' => require(__DIR__ . '/elastic.php'),

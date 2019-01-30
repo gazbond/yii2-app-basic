@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f2a2a12c5eef2a677374f3a7599bfdb",
+    "content-hash": "ca4ea796cc4faea055297b28a06323e1",
     "packages": [
         {
             "name": "borales/yii2-elasticsearch-behavior",
@@ -1710,6 +1710,59 @@
                 "url"
             ],
             "time": "2018-12-04T20:46:45+00:00"
+        },
+        {
+            "name": "mis/yii2-ide-helper",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/takashiki/yii2-ide-helper.git",
+                "reference": "51b25fbad8b4be1ac056acc242b2e8c4193cf2e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/takashiki/yii2-ide-helper/zipball/51b25fbad8b4be1ac056acc242b2e8c4193cf2e4",
+                "reference": "51b25fbad8b4be1ac056acc242b2e8c4193cf2e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mis\\IdeHelper\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "takashiki",
+                    "email": "857995137@qq.com"
+                }
+            ],
+            "description": "Yii2 IDE Helper, generates correct PHPDocs for all components, to improve auto-completion.",
+            "keywords": [
+                "autocomplete",
+                "codeintel",
+                "helper",
+                "ide",
+                "netbeans",
+                "phpdoc",
+                "phpstorm",
+                "sublime",
+                "yii2"
+            ],
+            "time": "2016-11-22T01:26:36+00:00"
         },
         {
             "name": "myclabs/deep-copy",
