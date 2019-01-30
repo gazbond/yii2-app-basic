@@ -14,7 +14,8 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
-            'cookieValidationKey' => ''
+            'cookieValidationKey' => '',
+            'enableCookieValidation' => false
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -94,12 +95,11 @@ if (YII_ENV_DEV) {
 //        'class' => 'yii\debug\Module',
 //        'allowedIPs' => []
 //    ];
-
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-        'allowedIPs' => []
-    ];
+//    $config['bootstrap'][] = 'gii';
+//    $config['modules']['gii'] = [
+//        'class' => 'yii\gii\Module',
+//        'allowedIPs' => []
+//    ];
 }
 require(__DIR__ . '/events.php');
 return $config;
