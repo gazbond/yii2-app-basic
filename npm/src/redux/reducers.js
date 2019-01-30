@@ -3,8 +3,7 @@
  * --------------------------
  */
 export const reducers = {
-    data: data,
-    httpError: httpError
+    data: data
 };
 
  
@@ -26,21 +25,6 @@ export function data(state = {}, action) {
             return Object.assign({}, state, {
                 me: action.me
         });
-        default:
-            return state;
-    }
-}
-
-export function httpError(state = {}, action) {
-    switch(action.type) {
-        case actions.HTTP_ERROR:
-            return Object.assign({}, state, {
-                error: action.error
-            });
-        case actions.RESET_HTTP_ERROR:
-            return Object.assign({}, state, {
-                error: null
-            });
         default:
             return state;
     }
