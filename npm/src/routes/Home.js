@@ -6,7 +6,14 @@ class Home extends React.Component {
     }
     render() {
         return (
-            <div>Home route</div>
+            <div>
+                <div className='row'>
+                    <div className="col-md-4">
+                        <br />
+                        <p className='alert alert-info'>Home route</p>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
