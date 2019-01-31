@@ -2,6 +2,7 @@
 
 use dektrium\user\controllers\SecurityController as BaseController;
 use dektrium\user\models\LoginForm;
+use yii\helpers\Json;
 use yii\web\HttpException;
 use Yii;
 
@@ -42,21 +43,19 @@ class SecurityController extends BaseController
         $this->trigger(self::EVENT_BEFORE_LOGIN, $event);
 
         $postData = Yii::$app->getRequest()->post();
-        if(isset($postData['login']) && isset($postData['password'])) {
+        $modelData = [
+            'login-form' => [
+                'login' => isset($postData['login']) ? $postData['login'] : '',
+                'password' => isset($postData['password']) ? $postData['login'] : ''
+            ]
+        ];
 
-            $modelData = [
-                'login-form' => [
-                    'login' => $postData['login'],
-                    'password' => $postData['password']
-                ]
-            ];
-
-            if ($model->load($modelData) && $model->login()) {
-                $this->trigger(self::EVENT_AFTER_LOGIN, $event);
-            }
+        if ($model->load($modelData) && $model->login()) {
+            $this->trigger(self::EVENT_AFTER_LOGIN, $event);
         }
 
-        return implode($model->getErrorSummary(false));
+        //return implode(' ', $model->getErrorSummary(false));
+        return Json::encode($model->getErrorSummary(false));
     }
 
     /**
