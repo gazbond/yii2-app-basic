@@ -8,9 +8,9 @@ class Module extends \yii\base\Module
 
     public function init()
     {
-        parent::init();
         Yii::$app->user->enableSession = false;
         Yii::$app->request->enableCsrfValidation = false;
         Yii::$app->user->loginUrl = null;
+        parent::init();
     }
 }

@@ -9,7 +9,9 @@ class Api extends React.Component {
         this.query = '';
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        props.load();
+    }
+    componentDidMount() {
+        this.props.load();
     }
     handleChange(event) {
         this.query = event.target.value;

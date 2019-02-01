@@ -7,10 +7,6 @@ $config = [
     'id' => 'gazbond/yii2-app-basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'ideHelper'],
-    'aliases' => [
-        '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
-    ],
     'controllerNamespace' => 'app\commands',
     'controllerMap' => [
         'fixture' => [

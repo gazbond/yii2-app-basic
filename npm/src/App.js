@@ -22,7 +22,8 @@ class App extends React.Component {
             response => response,
             error => {
                 if (error.response.status === 401) {
-                    window.location = '/user/login?__returnUrl=/react#' + this.props.location.pathname;
+                    // Encoded # (hash) - %23
+                    window.location = '/user/login?returnUrl=/site/react%23' + this.props.location.pathname;
                 } else {
                     this.props.history.push({
                         pathname: '/error',

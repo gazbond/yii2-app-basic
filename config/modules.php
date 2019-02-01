@@ -9,7 +9,10 @@ return [
         'modelMap' => [
             'User' => 'app\models\User',
         ],
-        'adminPermission' => 'admin'
+        'adminPermission' => 'admin',
+        'controllerMap' => [
+            'security' => 'app\controllers\SecurityController'
+        ]
     ],
     'rbac' => [
         'class' => 'dektrium\rbac\RbacWebModule'
