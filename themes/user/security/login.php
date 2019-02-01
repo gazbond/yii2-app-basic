@@ -101,5 +101,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::a(Yii::t('user', 'Don\'t have an account? Sign up!'), ['/user/registration/register']) ?>
             </p>
         <?php endif ?>
+        <?= Connect::widget([
+            'baseAuthUrl' => ['/user/security/auth'],
+        ]) ?>
     </div>
 </div>

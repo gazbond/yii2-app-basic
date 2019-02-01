@@ -15,7 +15,7 @@ $config = [
     'components' => [
         'request' => [
             'cookieValidationKey' => '',
-            'enableCookieValidation' => false
+            'enableCsrfValidation' => true
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -51,9 +51,6 @@ $config = [
                 ],
             ]
         ],
-        'settings'=>[
-            'class'=>'yii2mod\settings\components\Settings',
-        ],
         'i18n' => [
             'translations' => [
                 '*' => [
@@ -67,6 +64,11 @@ $config = [
         ],
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
+
+        ],
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => require(__DIR__ . '/auth-clients.php')
         ],
         'urlManager' => [
             'showScriptName' => false,
