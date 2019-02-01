@@ -1,5 +1,6 @@
 <?php namespace app\modules\api\controllers;
 
+use app\components\Utils;
 use dektrium\user\controllers\SecurityController as BaseController;
 use dektrium\user\models\LoginForm;
 use yii\helpers\Json;
@@ -46,9 +47,11 @@ class SecurityController extends BaseController
         $modelData = [
             'login-form' => [
                 'login' => isset($postData['login']) ? $postData['login'] : '',
-                'password' => isset($postData['password']) ? $postData['login'] : ''
+                'password' => isset($postData['password']) ? $postData['password'] : ''
             ]
         ];
+
+        Utils::log($modelData);
 
         if ($model->load($modelData) && $model->login()) {
             $this->trigger(self::EVENT_AFTER_LOGIN, $event);
