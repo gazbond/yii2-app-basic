@@ -6,7 +6,9 @@ import { searchUsers, getMe } from '../redux/actions';
 class Api extends React.Component {
     constructor(props) {
         super(props);
-        this.query = '';
+        this.state = {
+            query: ''
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
@@ -14,10 +16,12 @@ class Api extends React.Component {
         this.props.load();
     }
     handleChange(event) {
-        this.query = event.target.value;
+        this.setState({
+            query: event.target.value
+        });
     }
     handleClick() {
-        this.props.search(this.query);
+        this.props.search(this.state.query);
     }
     render() {
         const me = this.props.me;
