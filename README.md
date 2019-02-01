@@ -122,7 +122,12 @@ Yii Commands
 docker exec -it <container-id> bash
 
 ```
-### See docker.sh for Yii commands 
+
+```
+# Run docker.sh from /app/ directory
+cd /app/
+./docker.sh
+```
 
 Javascript and Stylesheets
 --------------------------
