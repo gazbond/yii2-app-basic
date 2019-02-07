@@ -94,7 +94,7 @@ class BaseElasticRecord extends ActiveRecord
             $mappings = $mappings[static::type()]['properties'];
             static::$propsMap = [];
             foreach($mappings as $prop => &$val) {
-                static::$propsMap[] .= $prop;
+                static::$propsMap[] = $prop;
             }
         }
         return static::$propsMap;
