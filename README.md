@@ -67,7 +67,7 @@ CONFIGURATION
 
 ### Database
 
-Edit the file `config/db.php` and `config/test-db.php` with real data, for example:
+Edit the files `config/db.php` and `config/test-db.php` with real data, for example:
 
 ```php
 return [
@@ -108,7 +108,22 @@ Edit the file `config/jwt.php` with real data, for example:
 ```php
 return [
     'class' => 'sizeg\jwt\Jwt',
-    'key' => 'generate-secret-signing-key'
+    'key' => '<long-secret-signing-key>'
+];
+```
+
+### Auth Clients
+
+Edit the file `config/auth-clients.php` with real data, for example:
+
+```php
+return [
+    'stripe' => [
+        'class' => 'app\components\StripeClient',
+        'clientId' => '<client-id-from-stripe-account>',
+        'clientSecret' => '<secret-from-stripe-account>',
+        'returnUrl' => 'http://localhost:8080/user/auth?authclient=stripe',
+    ],
 ];
 ```
 
@@ -136,7 +151,6 @@ Javascript and Stylesheets
 
 ```
 cd npm/
-
 npm install
 
 ```
